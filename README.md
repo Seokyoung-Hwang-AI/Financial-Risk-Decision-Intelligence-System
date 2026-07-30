@@ -78,6 +78,8 @@ Applies deterministic audit rules to identify known financial risk patterns befo
 
 ### 2. Isolation Forest
 
+![01](./05_images/01_isolation_forest.PNG)
+
 Uses unsupervised anomaly detection to identify previously unknown financial risk patterns without predefined fraud labels.
 
 **Key Insights**
@@ -91,6 +93,8 @@ Uses unsupervised anomaly detection to identify previously unknown financial ris
 
 ### 3. XGBoost + SHAP Explainability
 
+![02](./05_images/02_xgboost_shap.PNG)
+
 Builds a supervised fraud prediction model and explains individual prediction results through SHAP.
 
 **Key Insights**
@@ -103,6 +107,8 @@ Builds a supervised fraud prediction model and explains individual prediction re
 ---
 
 ### 4. Executive Risk Dashboard
+
+![03](./05_images/03_risk_dashboard.PNG)
 
 Transforms analytical outputs into executive-level financial risk intelligence through an integrated Power BI dashboard.
 
