@@ -1,4 +1,4 @@
-# Financial Risk Decision Intelligence System
+# 🛡️ Financial Risk Decision Intelligence System
 
 > **Project Goal:** Build an end-to-end Financial Risk Decision Intelligence platform that integrates SQL-based audit analytics, machine learning, explainable AI, and executive business intelligence to support data-driven financial risk monitoring and investigation prioritization.
 >> 🔗 **[Live Demo on Streamlit Cloud](https://financial-risk-decision-intelligence-system.streamlit.app)**
