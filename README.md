@@ -112,3 +112,13 @@ Transforms analytical outputs into executive-level financial risk intelligence t
 - Enabled risk prioritization through fraud probability, financial exposure, and vendor concentration analysis.
 - Visualized department-level risk distribution and monthly risk trends for portfolio-level monitoring.
 - Supported data-driven investigation prioritization through integrated financial risk KPIs.
+
+---
+
+## 💼 Business Value
+
+This project demonstrates how traditional financial risk analytics can evolve into a **Financial Risk Decision Intelligence platform** by integrating SQL-based audit analytics, machine learning, explainable AI, and executive business intelligence into a unified analytical workflow.
+
+Rather than simply detecting suspicious transactions, the platform enables finance leaders to identify high-risk spending patterns, prioritize investigations, monitor organizational risk exposure, and support data-driven financial governance through transparent and explainable risk analytics.
+
+By combining deterministic audit rules, behavioral anomaly detection, supervised fraud prediction, and executive dashboards, the system bridges operational fraud detection with strategic financial decision-making, illustrating how modern analytics can enhance financial oversight and risk management.
