@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # CONFIG
 # =========================
 BASE_DIR = os.getcwd()
-MODEL_PATH = os.path.join(BASE_DIR, 'models')
+MODEL_PATH = os.path.join(BASE_DIR, '06_models')
 
 st.set_page_config(
     page_title="FDS Risk Decision System",
