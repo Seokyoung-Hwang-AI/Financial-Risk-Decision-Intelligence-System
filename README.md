@@ -54,3 +54,61 @@ The dataset enables controlled validation of audit rules and machine learning mo
 - High-risk transaction patterns
 
 This approach provides reliable ground-truth labels for supervised learning while creating realistic business scenarios for executive risk analysis.
+
+---
+
+## 🔍 Detection Methodology
+
+The Financial Risk Decision Intelligence System combines deterministic audit analytics with machine learning and executive business intelligence to identify, explain, and monitor financial risks through a multi-layered analytical workflow.
+
+---
+
+### 1. SQL-Based Audit Analytics
+
+Applies deterministic audit rules to identify known financial risk patterns before machine learning analysis.
+
+**Key Insights**
+
+- Identified tactical payment splitting using a 7-day rolling transaction window.
+- Detected vendor concentration through annual spending and budget share thresholds.
+- Flagged fiscal year-end spending anomalies that indicate elevated financial risk.
+- Established a transparent rule-based baseline to complement machine learning predictions.
+
+---
+
+### 2. Isolation Forest
+
+Uses unsupervised anomaly detection to identify previously unknown financial risk patterns without predefined fraud labels.
+
+**Key Insights**
+
+- Successfully detected high-risk outlier transactions based on abnormal behavioral patterns.
+- Effectively identified extreme financial anomalies that traditional rule-based analytics may overlook.
+- Revealed limitations caused by masking effects, where moderate-risk transactions blended into normal business behavior.
+- Demonstrated the need for supervised learning to improve classification precision.
+
+---
+
+### 3. XGBoost + SHAP Explainability
+
+Builds a supervised fraud prediction model and explains individual prediction results through SHAP.
+
+**Key Insights**
+
+- Engineered behavioral features capturing transaction frequency, spending patterns, and fiscal timing.
+- Achieved high fraud detection performance with **98% Precision**, **98% Recall**, and a **0.99 F1-score**.
+- SHAP global analysis identified the most influential risk factors driving fraud predictions.
+- Local SHAP explanations provided transparent justification for individual high-risk transactions, improving model interpretability for financial investigations.
+
+---
+
+### 4. Executive Risk Dashboard
+
+Transforms analytical outputs into executive-level financial risk intelligence through an integrated Power BI dashboard.
+
+**Key Insights**
+
+- Consolidated SQL audit results and machine learning risk scores into a unified executive monitoring dashboard.
+- Enabled risk prioritization through fraud probability, financial exposure, and vendor concentration analysis.
+- Visualized department-level risk distribution and monthly risk trends for portfolio-level monitoring.
+- Supported data-driven investigation prioritization through integrated financial risk KPIs.
