@@ -171,6 +171,9 @@ with col2:
 
 st.subheader("🔍 Feature Explanation (SHAP)")
 
+fig, ax = plt.subplots()
+shap.plots.bar(shap_values[0], show=False)
+st.pyplot(fig)
 
 # =========================
 # LAYER 3 OUTPUT
