@@ -73,13 +73,13 @@ def rule_engine(row):
     rules = []
 
     if row["vendor_month_count"] <= 3 and row["amount"] >= 20000:
-        rules.append("⚠ Split Payment Pattern")
+        rules.append("⚠ Potential Split Payment Risk")
 
     if row["amount"] >= 40000:
-        rules.append("⚠ High Value Transaction")
+        rules.append("⚠ High Value Transaction Risk")
 
     if row["is_q4"] == 1 and row["amount"] > 30000:
-        rules.append("⚠ Q4 Budget Spike")
+        rules.append("⚠ Q4 Spending Spike Risk")
 
     return rules
 
@@ -120,75 +120,95 @@ rules = rule_engine(input_df.iloc[0])
 score = risk_score(input_df["amount"][0], proba)
 quadrant = risk_quadrant(input_df["amount"][0], proba)
 
+
 # =========================
 # UI
 # =========================
-st.title("🛡️ Government Expenditure FDS")
+
+st.title("🛡️ Financial Risk Decision Intelligence System")
 st.markdown("### 4-Layer Risk Decision System")
+
 
 # =========================
 # LAYER 1 OUTPUT
 # =========================
+
 st.divider()
-st.subheader("Layer 1: Rule Engine")
+st.subheader("Layer 1: SQL-Based Audit Analytics")
 
 if rules:
     for r in rules:
         st.warning(r)
 else:
-    st.success("No Rule Triggered")
+    st.success("No Risk Rule Triggered")
+
 
 # =========================
 # LAYER 2 OUTPUT
 # =========================
+
 st.divider()
-st.subheader("Layer 2: ML Prediction")
+st.subheader("Layer 2: ML Risk Prediction")
 
 col1, col2 = st.columns(2)
 
 with col1:
     if prediction == 1:
-        st.error("FRAUD DETECTED")
+        st.error("HIGH RISK TRANSACTION")
     else:
         st.success("NORMAL")
 
 with col2:
-    st.metric("Fraud Probability", f"{proba*100:.2f}%")
+    st.metric(
+        "Fraud Risk Probability",
+        f"{proba*100:.2f}%"
+    )
+
 
 # =========================
 # SHAP
 # =========================
+
 st.subheader("🔍 Feature Explanation (SHAP)")
 
-fig, ax = plt.subplots()
-shap.plots.bar(shap_values[0], show=False)
-st.pyplot(fig)
 
 # =========================
 # LAYER 3 OUTPUT
 # =========================
+
 st.divider()
-st.subheader("Layer 3: Risk Engine")
+st.subheader("Layer 3: Risk Scoring Engine")
 
 col3, col4 = st.columns(2)
 
 with col3:
-    st.metric("Risk Score", f"{score:,.2f}")
+    st.metric(
+        "Risk Score",
+        f"{score:,.2f}"
+    )
 
 with col4:
-    st.metric("Risk Quadrant", quadrant)
+    st.metric(
+        "Risk Quadrant",
+        quadrant
+    )
+
 
 # =========================
 # LAYER 4 OUTPUT
 # =========================
+
 st.divider()
-st.subheader("Layer 4: Audit Decision")
+st.subheader("Layer 4: Executive Audit Decision Support")
 
 if quadrant == "CRITICAL":
     st.error("IMMEDIATE AUDIT REQUIRED")
+
 elif quadrant == "HIGH RISK":
     st.warning("PRIORITY AUDIT")
+
 elif quadrant == "HIGH VALUE":
     st.info("REVIEW REQUIRED")
+
 else:
     st.success("NORMAL MONITORING")
